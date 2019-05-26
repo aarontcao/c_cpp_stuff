@@ -1,0 +1,24 @@
+printPlayers
+addOrder Aramis
+printPlayers
+addOrder Porthos
+printPlayers
+addOrder Athos
+printPlayers
+addItemOrder Athos bird 2
+addItemOrder Athos cat 10
+printEverything
+addItemOrder Athos cat 3
+addItemOrder Athos dog 5
+printEverything
+addItemOrder Aramis dog 3
+addItemOrder Aramis donut 24
+printEverything
+countPlayers
+countItems Athos
+countItems Porthos
+countItems Aramis
+numItems dog
+numItems donut
+gives Athos Porthos cat
+printEverything
