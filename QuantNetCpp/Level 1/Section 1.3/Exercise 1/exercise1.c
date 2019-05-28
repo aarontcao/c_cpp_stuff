@@ -9,6 +9,6 @@
 int main()
 {
     // Print the text
-    printf("My first C-program\nis a fact!\nGood, isn’t it?");
+    printf("My first C-program\nis a fact!\nGood, isn’t it?\n");
     return 0;
 }
