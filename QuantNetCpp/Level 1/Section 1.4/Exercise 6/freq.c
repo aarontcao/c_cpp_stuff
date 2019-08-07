@@ -1,5 +1,5 @@
 /*
-    C code for HW1, Section 1.4, Exercise 7
+    C code for HW1, Section 1.4, Exercise 6
 */
 
 // Preprocessor for include files
@@ -11,9 +11,6 @@ int main()
 {
     // Initialize character for input
     char c = ' ';
-
-    // Initialize numbers as words
-    char *digits[3] = {"zero", "one", "two"};
 
     // Initialize counters, EOF is not counted as a character
     int numZero = 0;
@@ -66,19 +63,7 @@ int main()
         }
     }
 
-    printf("\nZeroes: %d\n", numZero);
-    printf("Ones: %d\n", numOne);
-    printf("Twos: %d\n", numTwo);
-    if(numThree < 3)
-    {
-        printf("Number three appears %s time(s).\n", digits[numThree]);
-    }
-    else
-    {
-        printf("The number three appears more than two times.\n");
-    }
-    printf("Fours: %d\n", numFour);
-    printf("Other: %d\n", numOther);
+    printf("\nZeroes: %d, Ones: %d, Twos: %d, Threes: %d, Fours: %d, Other: %d\n", numZero, numOne, numTwo, numThree, numFour, numOther);
 
     return 0;
 }

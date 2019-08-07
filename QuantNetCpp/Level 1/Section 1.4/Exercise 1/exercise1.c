@@ -24,7 +24,7 @@ int main()
 
     printf("Type to your heart's content, then send Ctrl + D when finished:\n");
 
-    // Will run until Ctrl+D is executed
+    // Will run until Ctrl + D is executed
     while(c2 > 0)
     {
         // When a character is input, store it and increment the character counter
@@ -33,13 +33,13 @@ int main()
         numChar++;
 
         // Cases to handle words
-        if(((c2 == ' ' || c2 == '\n') && c1 != ' ' && c1 != '\n') || (c2 == EOF && c1 != ' ' && c1 != '\n'))
+        if(((c2 == ' ' || c2 == '\n' || c2 == '\t') && c1 != ' ' && c1 != '\n' && c1 != '\t') || (c2 == EOF && c1 != ' ' && c1 != '\n' && c1 != '\t'))
         {
             numWords++;
         }
 
         // Number of lines is always (number of \n's) + 1
-        else if(c2 == '\n')
+        if(c2 == '\n')
         {
             numLines++;
         }

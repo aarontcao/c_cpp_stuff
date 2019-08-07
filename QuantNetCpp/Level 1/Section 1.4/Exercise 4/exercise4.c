@@ -1,5 +1,5 @@
 /*
-    C code for HW1, Section 1.3, Exercise 4
+    C code for HW1, Section 1.4, Exercise 4
 */
 
 // Preprocessor for include files
@@ -8,11 +8,18 @@
 // Main function
 int main()
 {
-    // Declare an int takes value 0 or 1 to represent marriage state
-    int married = 0;
-    printf("Assigned married = %d\n", married);
+    int startTempF = 0;
+    int endTempF = 300;
+    int stepSize = 20;
+    int degF = startTempF;
+    double degC;
 
-    // Conditional print statement
-    printf("Marriage status: %c\n", married ? 'T' : 'F');   
+    printf("Degrees F: \t Degrees C:\n");
+    while(degF <= endTempF)
+    {
+        degC = (double) 5 * (degF - 32)/9;
+        printf("%d    \t    %10.1f\n", degF, degC);
+        degF += stepSize;
+    }
     return 0;
 }

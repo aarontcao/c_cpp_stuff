@@ -1,26 +1,79 @@
 /*
-    C code for HW1, Section 1.3, Exercise 3
+    C code for HW1, Section 1.4, Exercise 3
 */
 
 // Preprocessor for include files
-#include <stdio.h> // C style I/O
+#include <stdio.h>  // C style I/O
+#include <stdlib.h> // C standard library
 
 // Main function
 int main()
 {
-    int x;                    // Declare x
+    // Initialize characters c1 and c2 for current and previous input
+    char c1;
+    char c2 = ' ';
 
-    x = -3+4*5-6;             // x equals 11
-    printf("x = %d\n", x);    // prints "x = 11"
+    // Initialize counters, EOF is not counted as a character
+    int numChar = -1;
+    int numWords = 0;
+    int numLines = 1;
+    /*
+        Start at line 1 even if the first thing sent is Ctrl + D 
+        because I didn't want to write another condition to handle that case lol
+    */
 
-    x = 3+4%5-6;              // x equals 1
-    printf("x = %d\n", x);    // prints "x = 1"
+    printf("Type to your heart's content, then send Ctrl + D when finished:\n");
 
-    x = -3*4%-6/5;            // x equals 0
-    printf("x = %d\n", x);    // prints "x = 0"
+    // Will run until Ctrl + D is executed
+    while(c2 > 0)
+    {
+        // When a character is input, store it and increment the character counter
+        c1 = c2;
+        c2 = getchar();
+        numChar++;
 
-    x = (7+6)%5/2;            // x equals 1
-    printf("x = %d\n", x);    // prints "x = 1"
+        switch(c2)
+        {
+            case '\n':
+            {
+                numLines++;
+                if((c1 != ' ' && c1 != '\n' && c1 != '\t') || (c2 == EOF && c1 != ' ' && c1 != '\n' && c1 != '\t'))
+                {
+                    numWords++;
+                }
+                break;
+            }
+            case ' ':
+            {
+                if((c1 != ' ' && c1 != '\n' && c1 != '\t') || (c2 == EOF && c1 != ' ' && c1 != '\n' && c1 != '\t'))
+                {
+                    numWords++;
+                }
+                break;
+            }
+            case '\t':
+            {
+                if((c1 != ' ' && c1 != '\n' && c1 != '\t') || (c2 == EOF && c1 != ' ' && c1 != '\n' && c1 != '\t'))
+                {
+                    numWords++;
+                }
+                break;
+            }
+            case EOF:
+            {
+                if((c1 != ' ' && c1 != '\n' && c1 != '\t') || (c2 == EOF && c1 != ' ' && c1 != '\n' && c1 != '\t'))
+                {
+                    numWords++;
+                }
+                break;
+            }
+        }
+    }
+
+    printf("\nTotal Characters: %d\n", numChar);
+    printf("Total Words: %d\n", numWords);
+    printf("Total Lines: %d\n", numLines);
+
 
     return 0;
 }

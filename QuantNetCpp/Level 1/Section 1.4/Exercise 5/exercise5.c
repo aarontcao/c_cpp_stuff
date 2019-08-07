@@ -1,5 +1,5 @@
 /*
-    C code for HW1, Section 1.3, Exercise 5
+    C code for HW1, Section 1.4, Exercise 5
 */
 
 // Preprocessor for include files
@@ -8,34 +8,17 @@
 // Main function
 int main()
 {
-    int i = 10;         // i equals 10
-    int j = 20;         // j equals 20
-    int x;
-    printf("Initial Values: i = %d, j= %d\n", i, j);
+    int startTempC = 0;
+    int endTempC = 19;
+    int stepSize = 1;
+    int degC;
+    double degF;
 
-
-    // Postfix operator
-    x = j + i--;
-    printf("x = j + i-- evaluates to:\n");
-    printf("x = %d, i = %d, j = %d\n\n", x, i, j);
-    /*
-        x equals 30 and i equals 9
-        equivalent code:
-        x = i + j;
-        i = i - 1;
-    */
-
-    // Prefix operator
-    i = 10;
-    x = j + --i;
-    printf("x = j + --i evaluates to:\n");
-    printf("x = %d, i = %d, j = %d\n\n", x, i, j);
-    /*
-        x equals 29 and i equals 9
-        equivalent code:
-        i = i - 1;
-        x = i + j;
-    */
-
+    printf("Degrees C: \t Degrees F:\n");
+    for(degC = startTempC; degC <= endTempC; degC += stepSize)
+    {
+        degF = (double) 9 * degC/5 + 32;
+        printf("%d    \t    %10.1f\n", degC, degF);
+    }
     return 0;
 }
