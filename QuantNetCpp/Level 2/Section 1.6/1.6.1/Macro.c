@@ -15,9 +15,9 @@ int main()
 
     // Get input and print
     printf("Input a: ");
-    scanf("%lf", &a);
+    scanf_s("%lf", &a);
     printf("Input b: ");
-    scanf("%lf", &b);
+    scanf_s("%lf", &b);
     printf("\n");
 
     // Use the macros for printing
