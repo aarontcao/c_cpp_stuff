@@ -14,9 +14,14 @@ int Length(char str[]);
 // Main function
 int main()
 {
-	char string[MAXLINE + 1]; // Line of maximum 30 chars + \0
-	int c; // The input character
-	int i = 0; // The counter
+    // Line of maximum 30 chars + \0
+	char string[MAXLINE + 1];
+
+    // Input character
+	int c;
+
+    // Counter
+	int i = 0;
 
 	// Print intro text
 	printf("Type up to %d chars. Exit with ^Z\n", MAXLINE);
@@ -27,7 +32,8 @@ int main()
 		// Append entered character to string
 		string[i++] = (char)c;
 	}
-	string[i] = '\0'; // String must be closed with \0
+    // String must be closed with \0
+	string[i] = '\0';
 
 	printf("String length is %d\n", Length(string));
 

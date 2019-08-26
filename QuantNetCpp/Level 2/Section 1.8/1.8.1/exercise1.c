@@ -20,11 +20,16 @@ void Print(struct Article* article);
 // Main function
 int main()
 {
-	struct Article article; // create struct instance
-	article.articleNum = 100; // define struct fields
-	article.quantity = 10; // define struct fields
-	strcpy_s(article.desc, "C++ article"); // define struct fields
-	Print(&article); // call print function to display struct contents
+    // Create struct instance
+	struct Article article;
+
+    // Define struct fields
+	article.articleNum = 100;
+	article.quantity = 10; 
+	strcpy_s(article.desc, "C++ article"); 
+
+    // Call print function to display struct contents
+	Print(&article); 
 }
 
 // Implement the print function
