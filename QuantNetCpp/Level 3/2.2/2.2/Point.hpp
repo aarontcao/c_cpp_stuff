@@ -1,0 +1,35 @@
+/*
+	Header file for HW3, Section 2.2, Exercise 1
+*/
+
+#ifndef Point_HPP
+#define Point_HPP
+
+#include <iostream>
+using namespace std;
+
+class Point {
+private:
+	double xCoordinate;
+	double yCoordinate;
+
+public:
+	// Default constructor
+	Point();
+
+	// Destructor
+	~Point();
+
+	// Selector functions for each coordinate
+	double getX();
+	double getY();
+
+	// Modifier functions for each coordinate
+	void setX(double x);
+	void setY(double y);
+
+	// Convert point to string
+	string toString();
+};
+
+#endif
