@@ -4,6 +4,7 @@
 
 #include "Point.hpp"
 #include <sstream>
+#include <cmath>
 using namespace std;
 
 // Default constructor
@@ -41,7 +42,7 @@ void Point::setY(double y)
 }
 
 // Convert point to string
-string toString()
+string Point::toString()
 {
 	stringstream pointStream;
 
@@ -50,4 +51,16 @@ string toString()
 
 	// convert to string
 	return pointStream.str();
+}
+
+// Distance to the origin
+double Point::DistanceOrigin()
+{
+	return sqrt(pow(xCoordinate, 2) + pow(yCoordinate, 2));
+}
+
+//Distance between two points
+double Point::Distance(Point p)
+{
+	return sqrt(pow(xCoordinate - p.getX(), 2) + pow(yCoordinate - p.getY(), 2));
 }
