@@ -1,5 +1,5 @@
 /*
-	Header file for HW3, Section 2.3, Exercise 1
+	Header file for HW3, Section 2.3, Exercise 2
 */
 
 #ifndef Point_HPP
@@ -41,7 +41,7 @@ public:
 	double DistanceOrigin();
 
 	//Distance between two points
-	double Distance(Point p);
+	double Distance(const Point& p);
 };
 
 #endif

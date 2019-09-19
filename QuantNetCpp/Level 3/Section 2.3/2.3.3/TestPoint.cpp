@@ -1,5 +1,5 @@
 /*
-	C++ code for HW3, Section 2.3, Exercise 1
+	C++ code for HW3, Section 2.3, Exercise 3
 */
 
 // include header and source file
@@ -26,8 +26,8 @@ int main() {
 	Point p1;
 
 	// Set the coordinates using the setter functions
-	p1.setX(x);
-	p1.setY(y);
+	p1.X(x);
+	p1.Y(y);
 
 	// Create second Point object
 	Point p2(a, b);
@@ -37,16 +37,16 @@ int main() {
 
 	// Print the point 1 coordinates using the selector functions
 	cout << "Point 1" << endl;
-	cout << "X Coordinate: " << p1.getX() << endl;
-	cout << "Y Coordinate: " << p1.getY() << endl;
+	cout << "X Coordinate: " << p1.X() << endl;
+	cout << "Y Coordinate: " << p1.Y() << endl;
 
 	// Print the point 2 coordinates using the selector functions
 	cout << "Point 2" << endl;
-	cout << "X Coordinate: " << p2.getX() << endl;
-	cout << "Y Coordinate: " << p2.getY() << endl;
+	cout << "X Coordinate: " << p2.X() << endl;
+	cout << "Y Coordinate: " << p2.Y() << endl;
 
 	// Find the distance between p1 and the origin
-	cout << "The distance between your point and the origin is: " << p1.DistanceOrigin() << endl;
+	cout << "The distance between your point and the origin is: " << p1.Distance() << endl;
 	
 	// Find the distance between p1 and p2
 	cout << "The distance between your two points is: " << p1.Distance(p2) << endl;

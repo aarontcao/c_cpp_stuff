@@ -1,5 +1,5 @@
 /*
-	Header file for HW3, Section 2.3, Exercise 1
+	Header file for HW3, Section 2.3, Exercise 4
 */
 
 #ifndef Point_HPP
@@ -27,21 +27,21 @@ public:
 	~Point();
 
 	// Selector functions for each coordinate
-	double getX();
-	double getY();
+	double X() const;
+	double Y() const;
 
 	// Modifier functions for each coordinate
-	void setX(double x);
-	void setY(double y);
+	void X(double x);
+	void Y(double y);
 
 	// Convert point to string
-	string toString();
+	string toString() const;
 
 	// Distance to the origin
-	double DistanceOrigin();
+	double Distance() const;
 
 	//Distance between two points
-	double Distance(Point p);
+	double Distance(const Point& p) const;
 };
 
 #endif

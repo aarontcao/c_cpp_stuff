@@ -1,5 +1,5 @@
 /*
-	C++ code for HW3, Section 2.3, Exercise 1
+	C++ code for HW3, Section 2.3, Exercise 4
 */
 
 #include "Point.hpp"
@@ -37,29 +37,29 @@ Point::~Point()
 }
 
 // Selector functions for each coordinate
-double Point::getX() 
+double Point::X() const
 {
 	return xCoordinate;
 }
 
-double Point::getY() 
+double Point::Y() const
 {
 	return yCoordinate;
 }
 
 // Modifier functions for each coordinate
-void Point::setX(double x)
+void Point::X(double x)
 {
 	xCoordinate = x;
 }
 
-void Point::setY(double y)
+void Point::Y(double y)
 {
 	yCoordinate = y;
 }
 
 // Convert point to string
-string Point::toString()
+string Point::toString() const
 {
 	stringstream pointStream;
 
@@ -71,13 +71,13 @@ string Point::toString()
 }
 
 // Distance to the origin
-double Point::DistanceOrigin()
+double Point::Distance() const
 {
 	return sqrt(pow(xCoordinate, 2) + pow(yCoordinate, 2));
 }
 
 //Distance between two points
-double Point::Distance(Point p)
+double Point::Distance(const Point& p) const
 {
-	return sqrt(pow(xCoordinate - p.getX(), 2) + pow(yCoordinate - p.getY(), 2));
+	return sqrt(pow(xCoordinate - p.xCoordinate, 2) + pow(yCoordinate - p.yCoordinate, 2));
 }

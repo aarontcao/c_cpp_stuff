@@ -1,5 +1,5 @@
 /*
-	C++ code for HW3, Section 2.3, Exercise 1
+	C++ code for HW3, Section 2.3, Exercise 2
 */
 
 #include "Point.hpp"
@@ -77,7 +77,7 @@ double Point::DistanceOrigin()
 }
 
 //Distance between two points
-double Point::Distance(Point p)
+double Point::Distance(const Point& p)
 {
-	return sqrt(pow(xCoordinate - p.getX(), 2) + pow(yCoordinate - p.getY(), 2));
+	return sqrt(pow(xCoordinate - p.xCoordinate, 2) + pow(yCoordinate - p.yCoordinate, 2));
 }

@@ -36,9 +36,17 @@ int main() {
 	// Print the description of the point
 	cout << p1.toString() << endl;
 
-	// Print the point coordinates using the selector functions
+	// Print the point 1 coordinates using the selector functions
+	cout << "Point 1" << endl;
 	cout << "X Coordinate: " << p1.getX() << endl;
 	cout << "Y Coordinate: " << p1.getY() << endl;
+
+
+	// Print the point 2 coordinates using the selector functions
+	cout << "Point 2" << endl;
+	cout << "X Coordinate: " << p2.getX() << endl;
+	cout << "Y Coordinate: " << p2.getY() << endl;
+
 
 	// Find the distance between p1 and the origin
 	cout << "The distance between your point and the origin is: " << p1.DistanceOrigin() << endl;

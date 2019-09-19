@@ -1,5 +1,5 @@
 /*
-	C++ code for HW3, Section 2.3, Exercise 1
+	C++ code for HW3, Section 2.3, Exercise 2
 */
 
 // include header and source file
