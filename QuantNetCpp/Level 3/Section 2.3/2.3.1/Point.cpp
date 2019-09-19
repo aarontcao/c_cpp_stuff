@@ -1,0 +1,83 @@
+/*
+	C++ code for HW3, Section 2.2, Exercise 1
+*/
+
+#include "Point.hpp"
+#include <sstream>
+#include <cmath>
+#include <iostream>
+using namespace std;
+
+// Default constructor
+Point::Point()
+{
+	cout << "Default Constructor" << endl;
+}
+
+// Constructor
+Point::Point(double x, double y)
+{
+	xCoordinate = x;
+	yCoordinate = y;
+	cout << "Constructor" << endl;
+}
+
+// Copy constructor
+Point::Point(const Point& pt)
+{
+	xCoordinate = pt.xCoordinate;
+	yCoordinate = pt.yCoordinate;
+	cout << "Copy Constructor" << endl;
+}
+
+// Destructor
+Point::~Point()
+{
+	cout << "Destructor" << endl;
+}
+
+// Selector functions for each coordinate
+double Point::getX() 
+{
+	return xCoordinate;
+}
+
+double Point::getY() 
+{
+	return yCoordinate;
+}
+
+// Modifier functions for each coordinate
+void Point::setX(double x)
+{
+	xCoordinate = x;
+}
+
+void Point::setY(double y)
+{
+	yCoordinate = y;
+}
+
+// Convert point to string
+string Point::toString()
+{
+	stringstream pointStream;
+
+	// print format: Point(x, y)
+	pointStream << "Point(" << xCoordinate << ", " << yCoordinate << ")";
+
+	// convert to string
+	return pointStream.str();
+}
+
+// Distance to the origin
+double Point::DistanceOrigin()
+{
+	return sqrt(pow(xCoordinate, 2) + pow(yCoordinate, 2));
+}
+
+//Distance between two points
+double Point::Distance(Point p)
+{
+	return sqrt(pow(xCoordinate - p.getX(), 2) + pow(yCoordinate - p.getY(), 2));
+}
