@@ -14,26 +14,34 @@
 using namespace std;
 
 // Default constructor
-Point::Point(): xCoordinate(0), yCoordinate(0)
+Point::Point(): Shape()
 {
+	xCoordinate = 0;
+	yCoordinate = 0;
 	cout << "Default Constructor" << endl;
 }
 
 // Constructor
-Point::Point(double x, double y): xCoordinate(x), yCoordinate(y)
+Point::Point(double x, double y): Shape()
 {
+	xCoordinate = x;
+	yCoordinate = y;
 	cout << "Constructor" << endl;
 }
 
 // Explicit single-argument constructor
-Point::Point(double value): xCoordinate(value), yCoordinate(value)
+Point::Point(double value): Shape()
 {
+	xCoordinate = value;
+	yCoordinate = value;
 	cout << "Explicit Single-Argument Constructor" << endl;
 }
 
 // Copy constructor
-Point::Point(const Point& pt): xCoordinate(pt.xCoordinate), yCoordinate(pt.yCoordinate)
+Point::Point(const Point& pt): Shape(pt)
 {
+	xCoordinate = pt.xCoordinate;
+	yCoordinate = pt.yCoordinate;
 	cout << "Copy Constructor" << endl;
 }
 
@@ -99,10 +107,12 @@ bool Point::operator == (const Point& p) const
 }
 
 // Assignment operator
-Point& Point::operator = (const Point& source)
+Point& Point::operator = (const Point& pt)
 {
-	xCoordinate = source.xCoordinate;
-	yCoordinate = source.yCoordinate;
+	Shape::operator = (pt);
+
+	xCoordinate = pt.xCoordinate;
+	yCoordinate = pt.yCoordinate;
 
 	return *this;
 }

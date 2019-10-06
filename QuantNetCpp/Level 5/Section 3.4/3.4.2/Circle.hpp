@@ -7,8 +7,9 @@
 
 // include header and source file
 #include "Point.hpp"
+#include "Shape.hpp"
 
-class Circle {
+class Circle: public Shape{
 private:
 	Point center;
 	double radius;

@@ -5,11 +5,14 @@
 #ifndef Point_HPP
 #define Point_HPP
 
+// include header and source file
+#include "Shape.hpp"
+
 // include for cin/cout
 #include <iostream>
 using namespace std;
 
-class Point {
+class Point: public Shape {
 private:
 	double xCoordinate;
 	double yCoordinate;

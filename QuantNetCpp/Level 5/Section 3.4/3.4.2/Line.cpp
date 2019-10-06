@@ -10,20 +10,26 @@
 #include <sstream>
 
 // Default constructor
-Line::Line(): p1(0, 0), p2(0, 0)
+Line::Line(): Shape()
 {
+	p1 = Point(0, 0);
+	p2 = Point(0, 0);
 	cout << "Default Constructor" << endl;
 }
 
 // Constructor with start and end point
-Line::Line(const Point& pt1, const Point& pt2): p1(pt1), p2(pt2)
+Line::Line(const Point& pt1, const Point& pt2): Shape()
 {
+	p1 = pt1;
+	p2 = pt2;
 	cout << "Constructor" << endl;
 }
 
 // Copy constructor
-Line::Line(const Line& line): p1(line.p1), p2(line.p2)
+Line::Line(const Line& line): Shape(line)
 {
+	p1 = line.p1;
+	p2 = line.p2;
 	cout << "Copy Constructor" << endl;
 }
 
@@ -74,10 +80,12 @@ string Line::toString() const
 }
 
 // Assignment operator
-Line& Line::operator = (const Line& source)
+Line& Line::operator = (const Line& line)
 {
-	p1 = source.p1;
-	p2 = source.p2;
+	Shape::operator = (line);
+
+	p1 = line.p1;
+	p2 = line.p2;
 
 	return *this;
 }

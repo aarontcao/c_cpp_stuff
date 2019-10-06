@@ -2,54 +2,36 @@
 	Header file for HW5, Section 3.4, Exercise 2
 */
 
-#ifndef Circle_HPP
-#define Circle_HPP
+#ifndef Shape_HPP
+#define Shape_HPP
 
-#include "Point.hpp"
+// include for cin/cout
+#include <iostream>
+using namespace std;
 
-class Circle {
+class Shape
+{
 private:
-	Point center;
-	double radius;
+	int id; // ID
 
 public:
 	// Default constructor
-	Circle();
-
-	// Constructor with center, radius
-	Circle(const Point& c, double r);
+	Shape();
 
 	// Copy constructor
-	Circle(const Circle& c);
+	Shape(const Shape& shape);
 
 	// Destructor
-	~Circle();
+	virtual ~Shape();
 
-	// Selector functions for center, radius
-	Point CentrePoint() const;
-	double Radius() const;
-
-	// Modifier functions for center, radius
-	void CentrePoint(const Point& c);
-	void Radius(double r);
-
-	// Diameter of circle
-	double Diameter() const;
-
-	// Area of circle
-	double Area() const;
-
-	// Circumference of circle
-	double Circumference() const;
-
-	// Convert circle to string
-	string toString() const;
+	// Selector function for ID
+	int ID() const;
 
 	// Assignment operator
-	Circle& operator = (const Circle& source);
-};
+	Shape& operator = (const Shape& shape);
 
-// Send to ostream
-ostream& operator << (ostream& os, const Circle& c);
+	// Convert shape to string
+	string toString() const;
+};
 
 #endif

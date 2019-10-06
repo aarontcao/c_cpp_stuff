@@ -7,12 +7,13 @@
 
 // include header and source file
 #include "Point.hpp"
+#include "Shape.hpp"
 
 // include for cin/cout
 #include <iostream>
 using namespace std;
 
-class Line
+class Line: public Shape
 {
 private:
 	// Starting point

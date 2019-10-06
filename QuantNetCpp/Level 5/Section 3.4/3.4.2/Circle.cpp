@@ -97,10 +97,12 @@ string Circle::toString() const
 }
 
 // Assignment operator
-Circle& Circle::operator = (const Circle& source)
+Circle& Circle::operator = (const Circle& c)
 {
-	center = source.center;
-	radius = source.radius;
+	Shape::operator = (c);
+
+	center = c.center;
+	radius = c.radius;
 
 	return *this;
 }
