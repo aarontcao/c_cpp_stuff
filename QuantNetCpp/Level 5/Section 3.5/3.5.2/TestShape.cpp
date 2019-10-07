@@ -1,5 +1,5 @@
 /*
-	C++ code for HW5, Section 3.4, Exercise 2
+	C++ code for HW5, Section 3.5, Exercise 2
 */
 
 // include header and source file
@@ -27,7 +27,9 @@ int main()
 
 	Shape* sp; // Create pointer to a shape variable.
 	sp = &p; // Point in a shape variable. It's possible.
-	cout << sp->toString() << endl; // Shape ID: 18467 is printed
+
+	// Call the toString() function of Point, also prints ID
+	cout << sp->toString() << endl; // Point(10, 20) is printed
 
 	// Create and copy Point p to new point.
 	Point p2;
