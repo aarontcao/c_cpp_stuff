@@ -1,0 +1,142 @@
+/*
+	C++ code for HW5, Section 3.5, Exercise 5
+*/
+
+// include header and source file
+#include "Point.hpp"
+
+// include for math operations
+#include <cmath>
+
+// include for cin/cout
+#include <iostream>
+#include <sstream>
+using namespace std;
+
+// Default constructor
+Point::Point(): Shape()
+{
+	xCoordinate = 0;
+	yCoordinate = 0;
+	cout << "Default Constructor" << endl;
+}
+
+// Constructor
+Point::Point(double x, double y): Shape()
+{
+	xCoordinate = x;
+	yCoordinate = y;
+	cout << "Constructor" << endl;
+}
+
+// Explicit single-argument constructor
+Point::Point(double value): Shape()
+{
+	xCoordinate = value;
+	yCoordinate = value;
+	cout << "Explicit Single-Argument Constructor" << endl;
+}
+
+// Copy constructor
+Point::Point(const Point& pt): Shape(pt)
+{
+	xCoordinate = pt.xCoordinate;
+	yCoordinate = pt.yCoordinate;
+	cout << "Copy Constructor" << endl;
+}
+
+// Destructor
+Point::~Point()
+{
+	cout << "Point Destructor" << endl;
+}
+
+// Convert point to string
+string Point::toString() const
+{
+	stringstream pointStream;
+	std::string s = Shape::toString();
+
+	// print format: Point(x, y)
+	pointStream << "Point(" << xCoordinate << ", " << yCoordinate << "), " << s;
+
+	// convert to string
+	return pointStream.str();
+}
+
+// Distance to the origin
+double Point::Distance() const
+{
+	return sqrt(pow(xCoordinate, 2) + pow(yCoordinate, 2));
+}
+
+//Distance between two points
+double Point::Distance(const Point& p) const
+{
+	return sqrt(pow(xCoordinate - p.xCoordinate, 2) + pow(yCoordinate - p.yCoordinate, 2));
+}
+
+// Negate the coordinates
+Point Point::operator - () const
+{
+	return Point(-xCoordinate, -yCoordinate);
+}
+
+// Scale the coordinates
+Point Point::operator * (double factor) const
+{
+	return Point(factor * xCoordinate, factor * yCoordinate);
+}
+
+// Add coordinates
+Point Point::operator + (const Point& p) const
+{
+	return Point(xCoordinate + p.xCoordinate, yCoordinate + p.yCoordinate);
+}
+
+// Equally compare operator
+bool Point::operator == (const Point& p) const
+{
+	if(xCoordinate == p.xCoordinate && yCoordinate == p.yCoordinate)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
+
+// Assignment operator
+Point& Point::operator = (const Point& pt)
+{
+	Shape::operator = (pt);
+
+	xCoordinate = pt.xCoordinate;
+	yCoordinate = pt.yCoordinate;
+
+	return *this;
+}
+
+// Scale the coordinates & assign
+Point& Point::operator *= (double factor)
+{
+	xCoordinate *= factor;
+	yCoordinate *= factor;
+
+	return *this;
+}
+
+// Send to ostream
+ostream& operator << (ostream& os, const Point& p)
+{
+	os << p.toString() << endl;
+
+	return os;
+}
+
+// Draw
+void Point::Draw() const
+{
+	cout << "Point Draw" << endl;
+}
